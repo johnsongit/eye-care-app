@@ -14,16 +14,26 @@
   "build": {
     "appId": "com.johnson.eyecare",
     "productName": "健康小助手",
-    "artifactName": "EyeCare-${version}-${target}.${ext}",
-    "files": ["src/**/*", "assets/**/*", "package.json"],
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
     "win": {
       "icon": "assets/icon.png",
-      "target": ["portable", "nsis"]
+      "target": [
+        "portable",
+        "nsis"
+      ]
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "shortcutName": "健康小助手"
+      "shortcutName": "健康小助手",
+      "artifactName": "EyeCare-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "EyeCare-${version}-portable.${ext}"
     }
   },
   "devDependencies": {
