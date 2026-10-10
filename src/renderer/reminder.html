@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:" />
+<title>健康小助手</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: transparent; overflow: hidden; user-select: none; }
+body { font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif; padding: 10px; }
+.card { width: 420px; height: 280px; border-radius: 18px; background: linear-gradient(180deg, #edf3fb, #fff 55%);
+  border: 1px solid #e3e8f0; box-shadow: 0 4px 16px rgba(30,60,110,.2); padding: 26px 30px; display: flex; flex-direction: column; -webkit-app-region: drag; }
+.top { display: flex; align-items: center; gap: 16px; }
+.top img { width: 56px; height: 56px; filter: drop-shadow(0 4px 10px rgba(120,140,255,.35)); }
+h1 { font-size: 21px; color: #111; }
+p { margin-top: 18px; color: #444; font-size: 14px; line-height: 1.8; }
+.count { font-size: 40px; font-weight: 700; color: #4b8ef7; text-align: center; margin-top: 10px; letter-spacing: 2px; }
+.btns { margin-top: auto; display: flex; justify-content: flex-end; gap: 10px; -webkit-app-region: no-drag; }
+button { height: 34px; padding: 0 18px; border-radius: 17px; border: 1px solid #d9dce1; background: #fff; cursor: pointer; font-size: 14px; color: #333; font-family: inherit; }
+button.primary { background: #4b8ef7; border-color: #4b8ef7; color: #fff; }
+button:hover { filter: brightness(.96); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top"><img src="../../assets/icon.png" alt="" /><h1 id="title"></h1></div>
+  <p id="text"></p>
+  <div class="count" id="count" hidden></div>
+  <div class="btns" id="btns"></div>
+</div>
+<script src="reminder.js"></script>
+</body>
+</html>

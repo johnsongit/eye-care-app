@@ -1,0 +1,33 @@
+{
+  "name": "eye-care-assistant",
+  "productName": "健康小助手",
+  "version": "1.0.0",
+  "description": "电脑护眼应用：防蓝光、豆沙绿护眼、定时休息、定时关机",
+  "main": "src/main.js",
+  "author": "Johnson",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "icon": "python scripts/make_icon.py",
+    "dist": "electron-builder --win portable nsis"
+  },
+  "build": {
+    "appId": "com.johnson.eyecare",
+    "productName": "健康小助手",
+    "artifactName": "EyeCare-${version}-${target}.${ext}",
+    "files": ["src/**/*", "assets/**/*", "package.json"],
+    "win": {
+      "icon": "assets/icon.png",
+      "target": ["portable", "nsis"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "健康小助手"
+    }
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  }
+}
